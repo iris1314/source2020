@@ -1,24 +1,23 @@
 <!DOCTYPE HTML>
 <html>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Textillate.js</title>
-  <link href="css/animate.css" rel="stylesheet">
-  <!-- <link href="js/style.css" rel="stylesheet"> -->
-  <!-- <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'> -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textillate.js</title>
+    <link href="css/animate.css" rel="stylesheet">
+  </head>
+  
   <body>
     <h1 class="tlt" data-in-effect="rollIn">Title</h1>
     <h1 class="tlt">
       <ul class="texts">
-        <!-- <li data-in-effect="fadeIn" data-out-effect="fadeOut" data-out-shuffle="true">Some Title</li> -->
         <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, dignissimos.</li>
       </ul>
     </h1>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/jquery.fittext.js"></script>
     <script src="js/jquery.lettering.js"></script>
-    <!-- <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script> -->
     <script src="js/jquery.textillate.js"></script>
     <!-- <script>hljs.initHighlightingOnLoad();</script> -->
     <script>
