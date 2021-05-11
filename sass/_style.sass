@@ -1,0 +1,572 @@
+.over_hid
+  overflow: hidden 
+
+.header
+.img_index
+  width: 100%
+  height: 4607px
+  background: url(../images/index.png) no-repeat center top
+  
+
+.wrap
+  position: relative
+  .side_wrap
+    position: fixed
+    top: 177px
+    right: 0
+    z-index: 10
+    .sideBtn
+      background: $c_gr_001
+      padding: 30px 10px 11px
+      border-radius: 10px 0 0 10px
+      border: 1px solid $c_ye_001
+      border-right: none
+      color: $c_w_001
+      font-size: 20px
+      font-weight: 600
+      writing-mode: vertical-lr 
+      cursor: pointer
+      transition: all 0.3s
+      span
+        letter-spacing: 4px
+        position: relative
+        margin-bottom: 20px
+        &::before,&::after
+          font-size: 12px
+          color: $c_ye_001
+          position: absolute
+          font: $f_awesome
+          content: "\f0c8"
+          transform: rotate(45deg) scale(0.6)
+          left: calc(50%-6px)
+        &::before
+          top: -22px
+        &::after
+          // top: 98px
+      &:hover
+        color: $c_ye_001 
+      &+.sideBtn
+        margin-top: 20px
+    
+    
+
+
+  .sec
+    position: relative
+    padding-top: 80px
+    padding-bottom: 80px
+    h2
+      text-align: center
+      color: $c_gr_001
+      font-size: 40px
+      font-weight: 600
+      margin-bottom: 30px
+      span
+        position: relative
+        display: inline-block
+        padding: 0 30px
+        &::before,&::after
+          font-size: 16px
+          color: $c_re_001
+          position: absolute
+          font: $f_awesome
+          content: "\f0c8"
+          transform: rotate(45deg) scale(0.9)
+          top: 15px
+        &::before
+          left: 0
+        &::after
+          right: 0
+    .container
+      position: relative
+      .btn-group
+        margin-bottom: 20px
+        .btn-store-choose
+          font-size: 20px
+          font-weight: 600
+          position: relative
+          text-align: center
+          display: block
+          margin: 0 33px
+          color: $c_w_001
+          padding: 0
+          cursor: pointer
+          
+      
+          &.active
+            &::after
+              width: 100%
+
+          &::after
+            content: ""
+            display: block
+            position: absolute
+            bottom: 0
+            width: 0
+            height: 1px
+            background: $c_w_001
+            transition: all 0.3s
+          &:hover
+            color: $c_w_001
+            &::after
+              width: 100%
+
+
+          
+      .fruit
+        position: absolute
+        z-index: 5
+        top: -120px
+        animation: move_UpDown  1s infinite alternate
+      
+          
+
+        
+    &.banner
+      padding-top: 80px
+      padding-bottom: 0
+
+      .banner-swiper
+        .swiper-slide 
+          img
+            width: 100%
+      &::before
+        position: absolute
+        z-index: 9
+        bottom: 0
+        content: ""
+        display: block
+        width: 100%
+        height: 11.75vw
+        background-image: url(../images/cover_banner.png)
+        background-repeat: no-repeat
+        background-position: 50% 100%
+        background-size: contain
+        pointer-events: none
+        margin-bottom: -1px
+    &#news,&#store
+      background: url(../images/bg_news.jpg) repeat 
+      .news-swiper,.store-swiper
+        padding-left: 40px
+        padding-right: 40px
+        .swiper-slide
+          // width: 330px
+          img
+            width: calc(100% -20px)
+            border-radius: 10px
+            margin: 10px
+            box-shadow: 0 0 10px $c_g_001
+          h3
+            position: relative
+            font-size: 20px
+            font-weight: 600
+            color: $c_gr_001
+            text-align: center
+            margin-top: 10px
+            padding-bottom: 15px
+            p
+              font-size: 16px
+              color: $c_g_002
+              line-height: 1.5
+              margin-bottom: 0
+              margin-top: 15px
+              &+p
+                margin-top: 0
+            &::after
+              position: absolute
+              content: "_"
+              font-weight: 400
+              display: block
+              bottom: 0
+              left: 0
+              right: 0
+
+          .newsText,.storeContact
+            text-align: center
+      .news-swiper
+        img
+          cursor: pointer
+        .swiper-button-prev,.swiper-button-next
+          // top: 36%
+          top: 45%
+      .store-swiper
+        .swiper-button-prev,.swiper-button-next
+          top: 25%
+        .storeContact
+          p
+            margin-bottom: 0
+            position: relative
+            display: flex
+            justify-content: center
+            text-align: left
+            &::before
+              font: $f_awesome
+              display: block
+              width: 18px
+              padding-top: 5px
+            &.phone
+              &::before
+                content: "\f095"
+            &.bh
+              &::before
+                content: "\f017"
+    &#news
+      .swiper-button-next, .swiper-button-prev
+        top: 43%
+    &#store
+      position: relative
+      .swiper-button-next, .swiper-button-prev
+        top: 35%
+      .store-swiper
+        .swiper-slide
+          .img_wrap
+            position: relative
+            .btn_map
+              position: absolute
+              bottom: 15px
+              right: 15px
+              width: 20%
+              height: 0
+              padding-bottom: 20%
+              background: url(../images/ico_map.png) no-repeat center bottom
+              background-size: 100%
+              a
+                display: block
+                min-height: 70px
+      h2
+        margin-bottom: 20px
+      #btnStore
+        margin-bottom: 60px
+      &::after
+        position: absolute
+        bottom: 0
+        content: ""
+        display: block
+        width: 100%
+        height: 9.8vw
+        background-image: url(../images/cover_store.png)
+        background-repeat: no-repeat
+        background-position: 50% 100%
+        background-size: 100%
+        pointer-events: none
+        margin-bottom: -1px
+      .btn-group
+        a
+          color: $c_gr_001
+          &::after
+            background: $c_gr_001
+          &:hover
+            color: $c_gr_001
+
+        
+    &#about
+      width: 100%
+      background: url(../images/bg_about.jpg) no-repeat center top
+      background-size: cover
+      h2
+        color: $c_ye_001
+      .container
+        .btn-group
+          color: $c_w_001
+        .fruit
+          width: 21.5%
+          left: -16%
+          top: -260px
+          img
+            width: 100%
+        .aboutInfo
+          color: $c_w_001
+          letter-spacing: 1px
+          display: flex
+          align-items: stretch
+          min-height: 100%
+
+          .item
+            max-width: 100%
+            flex: 0 0 100%
+            display: none
+            font-size: 18px
+            &.active
+              display: block
+
+          
+    &#service
+      width: 100%
+      background: $c_w_001
+      color: $c_g_002
+      .container
+        .fruit
+          width: 25%
+          right: -16%
+          top: -438px
+          img
+            width: 100%
+      h4
+        max-width: 900px
+        margin-left: auto
+        margin-right: auto
+        color: $c_g_002
+        font-size: 18px
+        font-weight: 600
+        margin-bottom: 20px
+        letter-spacing: 1px
+        line-height: 1.5
+
+      h3
+        display: flex
+        justify-content: center
+        position: relative
+        color: $c_gr_001
+        font-size: 20px
+        font-weight: 600
+        margin-bottom: 30px
+        text-align: center
+        &::before
+          width: 27px
+          height: 27px
+          border-radius: 27px
+          background: $c_gr_001
+          color: $c_w_001
+          font: $f_awesome
+          content: "\f095"
+          line-height: 27px
+          margin-right: 8px
+          font-size: 17px
+      .contactArea
+        max-width: 900px
+        margin-left: auto
+        margin-right: auto
+        .customer_item
+          width: 100%
+          display: flex
+          justify-content: space-between
+          flex-wrap: wrap
+                  
+          .form-group
+            display: flex
+            justify-content: flex-start
+          
+
+            label
+              width: 100px
+              color: $c_g_002
+              font-weight: 600
+              font-size: 18px
+            .input_info
+              width: calc( 100% - 100px )
+        .btn_sent
+          width: 100%
+          text-align: center
+          
+          font-size: 18px
+          font-weight: 600
+          cursor: pointer
+          margin: 15px auto
+          button
+            color: $c_w_001
+            background: $c_gr_001
+            border-radius: 25px
+            outline: none
+            padding: 7px 33px
+            border: none
+            font-size: 20px
+            font-weight: 600
+            transition: all 0.3s
+            &:hover
+              color: $c_ye_001
+              box-shadow: 0 2px 2px #000
+    &#recruit
+      width: 100%
+      background: url(../images/bg_recruit.jpg) no-repeat
+      background-size: cover
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        width: 100%
+        height: 13vw
+        background-image: url(../images/cover_recruit.png)
+        background-repeat: no-repeat
+        background-position: 50% 101%
+        background-size: 100%
+        pointer-events: none
+        margin-bottom: -1px
+      .person_m,.person_fm
+        position: absolute
+        bottom: 0px
+        img
+          width: 100%
+      .person_m
+        width: 16%
+        right: -16%
+      .person_fm
+        width: 14.75%
+        left: -14.5%
+      h4
+        max-width: 900px
+        margin-left: auto
+        margin-right: auto
+        color: $c_g_002
+        font-size: 18px
+        font-weight: 600
+        margin-bottom: 40px
+        letter-spacing: 1px
+        line-height: 1.5
+      .recruitInfo 
+        max-width: 900px
+        margin-left: auto
+        margin-right: auto
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        color: $c_w_001
+        .item
+          width: 45%
+          margin-bottom: 15px
+          h3
+            color: $c_gr_001
+            font-size: 20px
+            font-weight: 600
+            margin-bottom: 15px
+            border-bottom: 1px solid $c_gr_001
+            padding-bottom: 3px
+            span
+              position: relative
+              display: inline-block
+              position: relative
+              padding: 0 18px
+              &::before,&::after
+                font-size: 12px
+                color: $c_gr_001
+                position: absolute
+                font: $f_awesome
+                content: "\f0c8"
+                transform: rotate(45deg) scale(0.6)
+                top: 5px
+              &::before
+                left: 0
+              &::after
+                right: 0
+                
+          ul
+            list-style: none
+            color: $c_g_002
+            mb20
+            
+            li
+              font-size: 18px
+              font-weight: 600
+              margin-bottom: 5px
+              letter-spacing: 1px
+      .btn_wrap 
+        width: 100%
+        display: flex
+        justify-content: center
+        
+        .btn_recruit
+          color: $c_w_001
+          background: $c_gr_001
+          border-radius: 25px
+          outline: none
+          padding: 7px 33px
+          text-align: center
+          border: none
+          font-size: 20px
+          font-weight: 600
+          transition: all 0.3s
+          margin: 0 15px
+          &:hover
+            color: $c_ye_001
+            box-shadow: 0 2px 2px #000
+            a
+              color: $c_ye_001
+              text-decoration: none
+
+        
+
+
+
+
+
+
+
+      
+
+      
+
+
+
+
+
+	
+footer
+  width: 100%
+  text-align: center
+  background: $c_gr_001
+  color: $c_ye_001
+  position: relative
+  z-index: 30
+  .coprright
+    font-size: 18px
+    font-weight: 600
+    padding-top: 15px
+    padding-bottom: 15px
+
+
+
+#popNews
+  position: fixed
+  width: 100%
+  height: 100vh
+  background: rgba(0, 0 , 0, 0.9)
+  z-index: 100
+  display: none
+  .pop_win
+    width: 100%
+    height: 100vh
+    overflow-y: auto
+    position: relative
+    .btn_close
+      font-size: 24px
+      font-weight: 600
+      color: $c_w_001
+      position: fixed
+      z-index: 30
+      top: 20px
+      right: 30px
+      cursor: pointer
+    .popWrap 
+      width: 850px
+      margin: 0 auto
+      color: $c_w_001
+      padding: 50px 30px
+      position: relative
+
+      
+      .popCon
+        // margin-top: 40px
+        text-align: center
+        
+        
+    h3,h4
+      font-size: 20px
+      font-weight: 600
+      margin-top: 20px
+      margin-bottom: 20px
+      text-align: center
+      position: relative
+    
+      
+    img
+      max-width: 100%
+    h4
+      text-align: left
+    p 
+      font-size: 18px
+      font-weight: 600
+    ul
+      li
+        margin-bottom: 15px
+      
+.flipbook-overlay
+  background: rgba(0,0,0,0.9)

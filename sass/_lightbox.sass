@@ -1,0 +1,179 @@
+.lightbox
+	display: none
+	width: 100vw
+	height: 100vh
+	// background: url(images/bg_lightbox.png) no-repeat center center
+	background-size: cover
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 0
+	opacity: 0
+	visibility: hidden
+	overflow: hidden
+	-webkit-transition-duration: .3s
+	transition-duration: .3s
+	.scroll
+		width: 100vw
+		max-height: 100vh
+		padding: 30px 0px 100px
+		overflow-x: visible
+		overflow-y: auto
+	.lightbox-wrap
+		display: none
+		width: 100%
+		max-width: 800px
+		padding: 0px
+		margin: 0 auto 100px
+		// border: 7px solid $c_g_006
+		border-radius: 3px
+		background: $c_g_007
+		background-size: 100% 100%
+		// box-shadow: 0 0 5px $c_b_t_002
+		position: relative
+		// transform: translateY(300%)
+		// transform: scale(0.8)
+		opacity: 0
+		// transition-delay: 0s
+		// transition-duration: .3s
+		// transition-timing-function: ease-out
+		// animation-name: zoomOut
+		animation-delay: 0s
+		animation-duration: .3s
+		animation-timing-function: ease-out
+		animation-fill-mode: both
+		.lightbox-header
+			display: block
+			width: 100%
+			.lightbox-title
+				display: block
+				margin-top: -90px
+				pointer-events: none
+				img
+					margin: 0 auto
+		// 客制內容 開始
+		.lightbox-container
+			padding: 15px 30px
+			overflow: hidden
+			color: $c_w_001
+			position: relative
+		.lightbox-title
+			padding-bottom: 0.25em
+			margin-bottom: 0.5em		
+			border-bottom: 1px solid $c_g_004
+
+	// 客制內容 結束
+	.btn-close
+		display: block
+		width: 60px
+		height: 60px
+		line-height: 1
+		padding: 0
+		font-size: 30px
+		text-align: center
+		// background: url(images/btn_close@2x.png) no-repeat center top
+		background: $c_t
+		border: 1px solid $c_w_001
+		border-radius: 30px
+		color: $c_w_001
+		// font-size: 21px
+		position: absolute
+		top: 20px
+		right: 30px
+		transition-duration: 0s
+		cursor: pointer
+		z-index: 2
+		transform: scale(0.85)
+		transition: transform .3s ease
+		.ico-close
+			fill: $c_w_001
+			margin-top: -12.5%
+		&:hover
+			transform: scale(1)
+			// background-position: center bottom
+	&.in
+		+flex
+		z-index: 1000
+		opacity: 1
+		visibility: visible
+		.lightbox-wrap.active
+			display: block
+			animation-name: zoomIn
+			animation-delay: .3s
+			opacity: 1
+			// animation: .3s 0s zoomIn
+			// transform: translateY(0%)
+			// transform: scale(1)
+		&:before
+			+ele_pseudo
+			width: 100%
+			height: 100vh
+			animation-name: fadeIn
+			animation-delay: 0s
+			animation-duration: .3s
+			animation-timing-function: ease-out
+			animation-fill-mode: both
+			background: $c_b_t_001
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+	&.closeing
+		.lightbox-wrap.active
+			animation-name: zoomOutDown !important
+			animation-delay: .0s
+
+@media screen and (min-width: 1170px) and (max-width: 1440px)
+	.lightbox
+		height: 100%
+		.lightbox-wrap
+			margin-top: 100px
+			margin-bottom: 120px
+
+@media screen and (max-width: 991px)
+	.lightbox
+		.lightbox-wrap
+			max-width: 90%
+
+@media screen and (max-width: 767px)
+	.lightbox
+		.scroll
+			width: 100vw
+			// height: 100vh
+			padding-top: 0
+			padding-bottom: 0
+			overflow-y: auto
+		.lightbox-wrap
+			.btn-close
+				// top: -50px
+				right: 20px
+			// 客制內容 開始
+			.lightbox-title
+				font-size: 27px	
+			.lightbox-container
+				padding-left: 15px
+				padding-right: 15px
+				.form-horizontal
+					.form-group label
+						line-height: 34px
+				.media-group
+					margin-left: -20px
+					margin-right: -20px
+		// &.in
+		// 	display: block
+			// 客制內容 結束
+			// 
+
+@media screen and (min-width: 1200px) and (max-height: 680px)
+	.lightbox 
+		.scroll
+			padding: 0
+		.lightbox-wrap
+			margin-bottom: 15px
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px)
+	.lightbox .lightbox-wrap .img_box img
+		width: auto
+		height: auto
+		min-height: 459px
+		margin: auto

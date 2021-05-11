@@ -1,0 +1,442 @@
+/* COMMON 
+ *====================== */
+
+html,
+body
+	position: relative
+	width: 100%
+	height: auto
+	margin: 0
+	padding: 0
+	background: $c_w_001
+	color: $c_g_001
+	font-family: $f_Noto
+	font-size: ($body_size)+px
+	&.overlay
+		min-height: 100vh
+ul,
+ol
+	list-style: none
+	padding-inline-start: 0px
+	-webkit-padding-start: 0px
+
+a
+	color: inherit
+	outline: none !important
+	text-decoration: none
+	// transition: all ease-out 0.3s
+	transform: translate(x, y)
+input,
+button,
+select,
+textarea
+	outline: none !important
+	text-decoration: none
+	transition: all ease-out 0.3s
+
+\::-moz-focus-inner
+	border: 0
+
+textarea
+	resize: none
+
+a
+	&:hover,
+	&:link,
+	&:focus,
+	&:active
+		+hidden_border
+
+input[type="text"]:focus,
+textarea:focus,
+*:focus
+	+hidden_border
+
+button
+	&:active,
+	&:visited
+		+hidden_border
+
+	&::-moz-focus-inner,
+	&::focus-inner
+		border: 0 none
+
+
+img
+	-moz-user-select: none
+
+
+
+.wrap
+	width: 100%
+	height: auto
+	margin: auto
+	padding-top: 0px
+	background: $c_t
+	// box-shadow: 0 5px 10px $c_w_001
+	position: relative
+	z-index: 1
+	overflow: hidden
+
+.header,
+.main,
+.footer
+	width: 100%
+	padding: 0px
+	margin: 0px
+
+
+.footer
+	text-align: center
+
+
+// 123
+ul.sty-dec,
+ol.sty-dec
+	list-style: decimal
+	padding-left: 1.5rem
+// ●
+ul.sty-disc,
+ol.sty-disc
+	list-style: disc
+	padding-left: 1.5rem
+// abc
+ul.sty-eng,
+ol.sty-eng
+	list-style: lower-alpha
+	padding-left: 1.5rem
+// abc
+ul.sty-none,
+ol.sty-none
+	list-style: none
+	padding-left: 0
+
+.header
+	background-color: $c_gr_001
+	
+.navbar
+	color: $c_w_001
+	position: relative
+	.navbar-brand
+		width: 180px
+		position: absolute
+		transform: translateX(50%)
+		right: 50%
+		bottom: -105%
+		margin-right: 0
+		img
+			width: 100%
+
+.navbar-nav
+	// margin-right: 2rem
+	// 第一層選單
+	
+
+
+	.nav-item
+		display: inline-block
+		transition-duration: .3s
+		// &.dropdown .dropdown-toggle::after
+		// 	width: auto
+		// 	height: auto
+		// 	border: 0
+		// 	@extend %fa-angle-d
+		// 	vertical-align: middle
+		// 	margin-top: -14px
+		// 	margin-left: 5px
+		&:hover,&.active
+			.nav-link
+				// background-color: $c_b_001
+				color: $c_w_001
+.navbar-hamburger
+	float: right
+	width: 50px
+	height: 50px
+	padding: 0px
+	border: 0
+	outline: 0
+	margin-top: -25px
+	position: absolute
+	top: 50%
+	right: 15px
+	left: auto
+	z-index: 105
+.navbar-hamburger-icon
+	position: relative
+	display: block
+	margin-top: 0px
+	margin-left: 20%
+	width: 60%
+	height: 2px
+	transition: all .6s cubic-bezier(0.190, 1.000, 0.220, 1.000)
+	background-color: $c_t
+	&:before,&:after
+		width: 100%
+		height: 2px
+		-webkit-transition: all .6s cubic-bezier(0.190, 1.000, 0.220, 1.000)
+		transition: all .6s cubic-bezier(0.190, 1.000, 0.220, 1.000)
+		background-color: $c_ye_001
+		position: absolute
+		top: 0
+		left: 0
+		content: ""
+	&:before
+		transform: rotate(45deg)
+	&:after
+		transform: rotate(-45deg)
+.collapsed
+	.navbar-hamburger-icon
+		// background-color: transparent
+		background-color: $c_ye_001
+		&:before,&:after
+		&:before
+			top: -9px
+			transform: rotate(0deg)
+		&:after
+			top: 9px
+			transform: rotate(0deg)
+
+@media screen and (min-width: 992px)
+	.header
+		box-shadow: 0 0 20px #000
+	// 	background-color: $c_gr_001
+	.navbar
+		height: (80/$body_size)+rem
+		justify-content: space-evenly
+		
+		.navbar-nav
+			width: 100%
+			height: 100% !important
+			display: flex
+			padding-top: 0.5rem
+			padding-bottom: 0.5rem
+			font-size: 20px
+			.nav-link
+				// padding: 2.575rem 0.25rem
+				position: relative
+				// text-align: center
+				// &:before
+				// 	+ele_pseudo
+				// 	display: none
+				// 	width: 100%
+				// 	height: 5px
+				// 	// background: $c_bl_003
+				// 	background-size: cover
+				// 	position: absolute
+				// 	bottom: 0
+				// 	left: 0
+				// 	right: 0
+				transition: all 0.3s
+			.nav-item
+				max-width: 16%
+				flex: 0 0 16%
+				text-align: right
+				a
+					color: $c_w_001
+				&:nth-child(3),&:nth-child(4)
+					max-width: 18%
+					flex: 0 0 18%
+				&:nth-child(1),	&:nth-child(2),	&:nth-child(3)
+					text-align: left
+				+ .nav-item
+					padding-left: 0rem
+				&:hover
+					>a
+						color: $c_ye_001
+						
+					.nav-link:before
+						display: block
+				&.active
+					>a
+						color: $c_ye_001
+				.lang_wrap 
+					display: flex
+					justify-content: flex-end
+					align-items: center
+					padding: 8px
+					.lang
+						margin: 0 7px
+						a
+							padding: 2px 9px
+							border: 1px solid $c_ye_002
+							border-radius: 20px
+							
+							color: $c_ye_001
+							font-size: 20px
+							font-weight: 400
+							text-decoration: none
+							
+						&.active
+							a
+								background: $c_ye_002
+								color: $c_gr_001
+
+
+
+.wow
+	// animation-duration: .3s !important
+	visibility：hidden
+	&.slideOutRight,
+	&.slideInOutRight
+		visibility: visible !important
+			
+.animated-delay-0s
+	animation-delay: 0s !important
+	transition-delay: 0s !important
+
+
+/* swiper */
+.swiper-pagination-bullet
+	width: 12px
+	height: 12px
+	background: rgba($c_w_001 ,0.5)
+	// border: 1px solid $c_w_001
+	opacity: 1
+.swiper-pagination-bullet-active
+	background: $c_w_001
+	border: 0
+.swiper-button-next, .swiper-button-prev
+	width: 12px
+	height: 50px
+	color: $c_gr_001
+	
+	// background-color: var(--white)
+	&::after
+		font: $f_awesome
+		font-size: 34px
+.swiper-button-prev
+	left: 0
+	&::after
+		content: "\f0d9"
+.swiper-button-next
+	right: 0
+	&::after
+  	content: "\f0da"
+.swiper-container-horizontal
+	&>.swiper-pagination-bullets
+		bottom: 6%
+		.swiper-pagination-bullet
+			margin: 0 10px
+
+
+// lazysizes
+	
+.lazyload:not([src])
+	visibility: hidden
+.lazyload,.lazyloading
+	opacity: 0
+.lazyloaded 
+	opacity: 1
+	transition: opacity 600ms
+
+@media screen and (max-width: 991px)
+	.swiper-button-prev
+		left: 30px
+	.swiper-button-next
+		right: 30px
+	.wrap
+		// padding-top: (82/$body_size)+rem
+	.navbar
+		height: (60/$body_size)+rem
+		padding: 0
+		.nav-item
+			max-width: 100%
+			&:nth-child(1),&:nth-child(2)
+				max-width: 100%
+		.navbar-brand
+			width: 100%
+			max-width: none
+			height: 100%
+			position: absolute
+			transform: translateX(0)
+			// left: 0
+			right: 0
+			z-index: 104
+			top: 0
+			padding-top: 0
+			margin-right: 0
+			margin-bottom: 0
+			background-color: $c_gr_001
+			box-shadow: 0 0 20px $c_b_001
+			h1
+				margin-bottom: 0
+				padding-bottom: 0
+			img
+				width: auto
+				height: (40/$body_size)+rem
+				margin: 12px 8px
+				
+				// margin-top: 3px
+	.navbar-nav 
+		margin-left: 0 !important
+		text-align: center
+		.nav-item 
+			padding-left: 1rem
+			padding-right: 1rem
+			.nav-link
+				color: $c_w_001
+				font-size: 20px
+				padding-top: 0.5em
+				padding-bottom: 0.5em
+				text-align: center
+				// letter-spacing: 1em
+				border-bottom: 1px solid $c_ye_001
+				&.open
+					color: $c_gr_001
+					&:after
+						transform: rotate(180deg)
+			&.dropdown 
+				> .dropdown-toggle::after
+					position: absolute
+					top: 30px
+			+ .nav-item 
+				.nav-link
+					// border-top: 1px solid $c_g_002
+			.lang_wrap 
+				display: flex
+				justify-content: center
+				align-items: center
+				margin-top: 15px
+				margin-bottom: 15px
+				.lang
+					margin: 0 7px
+					a
+						padding: 2px 9px
+						border: 1px solid $c_ye_002
+						border-radius: 20px
+						
+						color: $c_ye_001
+						font-size: 20px
+						font-weight: 400
+						text-decoration: none
+					&.active
+						a
+							background: $c_ye_002
+							color: $c_gr_001
+		.nav-link
+			padding-left: 1rem
+			padding-right: 1rem
+
+			padding-left: 1rem
+			padding-right: 0rem
+			
+
+	.navbar-collapse
+		.navbar-nav
+			position: fixed
+			z-index: 101
+			width: 100%
+			height: auto
+			top: 0
+			left: 0
+			right: 0
+			background-color: $c_gr_001
+			padding-top: 10px
+			padding-bottom: 10vh
+			transform: translateY(-1000px)
+			will-change: transform
+			overflow: auto
+		&.show
+			.navbar-nav
+				transform: translateY((60/$body_size)+rem)
+				transition: transform .6s cubic-bezier(0.190, 1.000, 0.220, 1.000)

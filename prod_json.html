@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>json切版測試</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link type="text/css" rel="stylesheet" href="css/prod_json.css" />
 </head>
 
 <body>
-
+    <div class="wrap">
+        <ul></ul>
+    </div>
 </body>
+<script src="https://source2020.herokuapp.com/js/jquery-3.4.1.min.js"></script>
+<script>
+    var prod = '';
+    $.getJSON('json/product.json', function(data) {
+        for (var i = 0; i < data.length; i++) {
+            prod += '<li><div class="prod_img"><img src="' + data[i]["imgUrl"] +
+                '" alt=""/></div> <div class="prod_wrap"> <div class="prod_name">' + data[i]["name"] +
+                '</div> <div class="prod_discr">' + data[i]["description"] +
+                '</div> <div class="prod_footer"> <div class="prod_num"> 數量<span>' + data[i]["num"] +
+                '</span></div> <div class="prod_price">售價<strong>$</strong><span>' + data[i]["price"] +
+                '</span></div> </div> </div></li>';
+        }
+        $('.wrap ul').html(prod);
+        console.log(prod);
+    });
+    //- $.getJSON('https://source2020.herokuapp.com/json/product.json', function( data ){
+    //-   for(var i=0; i<data.length;i++){
+    //-     prod +='<li><div class="prod_img"><img src="'+data[i]["imgUrl"]+'" alt=""></div><div class="prod_wrap"><div class="prod_name">'+data[i]["name"]+'</div><div class="prod_discr">'+data[i]["description"]+'</div><div class="prod_footer"><div class="prod_num">數量<span>'+data[i]["num"]+'</span></div><div class="prod_price">售價<strong>$</strong><span>'+data[i]["price"]+"</span></div></div></div></li>';
+    //-   }
+    //-   $('.wrap ul').html(prod);
+    //- });
+</script>
 
 </html>

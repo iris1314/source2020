@@ -1,0 +1,212 @@
+// 設定-偽元素設定
+=ele_pseudo($d:block,$t:"")
+	display: $d
+	content: $t
+
+// 設定-按紐基本樣式
+=hidden_border
+	// color: inherit
+	// outline: none !important
+	// outline-color: transparent 
+	// box-shadow: none 
+	// text-decoration: none
+
+// 排版-flex
+=flex($p:center, $v:center, $a:center, $d:row, $w: wrap)
+	display: flex
+
+	// ←→ 主軸的對齊設定(jc):  start | end | flex-start | flex-end | center | space-between | space-around | space-evenly(ff only)
+	justify-content: $p
+
+	// ↑↓ 副軸線的對齊設定(ai): flex-start | flex-end | center | baseline | stretch
+	align-items: $v
+
+	// 田 副軸線的對齊設定(多行版本)(ac): flex-start | flex-end | center | space-between | space-around | stretch
+	align-content: $a
+
+	// ＋ 主軸線設定(fxd): row | row-reverse | column | column-reverse
+	flex-direction: $d
+
+	// 超出範圍時是否換行的屬性(fxw): nowrap | wrap | wrap-reverse
+	flex-wrap: $w
+
+	// order(ord): 主軸元件排列順序
+	// align-self(as): 交錯軸元件對齊設定
+
+	// flex: flex-grow flex-shrink flex-basis (如果只設定一個是flex-grow)
+	// flex-grow(fxg): 元件的伸展性, 預設值為 0 不會伸展
+	// flex-shrink(fxsh): 元件的收縮性, 預設值為 0 不會收縮
+	// flex-basis(fxb): 元件的基準值
+
+// 格線模板-grid
+// =grid()
+// 	display: grid
+// 	grid-template-rows(gtr): // 設定行網格
+// 	grid-template-columns(gtc): // 設定列網格
+// 	grid-template-areas(gta): // 指定命名網格區，網格建立的細胞並賦予它們的名字
+// 	grid-gap: 5px // 間距
+// 	grid-template: // CSS屬性是一個簡寫屬性，用於設定網格寬，高和領域。
+// 	// ex1:
+// 	grid-template-rows: 50px repeat(2, 1fr) 30px
+// 	grid-template-columns: 150px 1fr 50px
+// 	grid-template-areas: "header header header" "nav main ." "nav main ." ". . ."
+// 	// ex2:
+// 	grid-template: grid-template-rows / grid-template-columns
+// 	grid-template: "header header header" 50px "nav main ." 1fr "nav main ." 1fr ". . ." 30px / 150px 1fr 50px
+// 	.item
+// 		grid-area: footer
+// 		grid-column: grid-column-start/grid-column-end
+// 		grid-row: grid-row-start / grid-row-end
+// 		grid-area: grid-row-start / grid-column-start / grid-row-end / grid-colun-end
+// 		grid-area: 4 / 1 / auto / integer 3 // integer: 將第n條網格線貢獻給網格項目的位置。如果給定一個負整數，則從顯式網格的末端開始倒數。
+// 		grid-area: 4 / 1 / auto / span 3 // span: 將網格指定所要跨越的行。
+
+// mixin變數
+//判斷變數是bootstrap4 breakpoints，依照判斷出來的載入對應的media query
+=media($point)
+	@if $point == xl-up
+		@media only screen and (min-width: 1200px)
+			@content 
+	@else if $point == lg-up
+		@media only screen and (min-width: 992px)
+			@content 
+	@else if $point == md-up
+		@media only screen and (min-width: 768px)
+			@content 
+	@else if $point == sm-up
+		@media only screen and (min-width: 576px)   
+			@content 
+	@else if $point == lg-down 
+		@media only screen and (max-width: 1200px)
+			@content 
+	@else if $point == lg-down 
+		@media only screen and (max-width: 992px)
+			@content 
+	@else if $point == md-down 
+		@media only screen and (max-width: 768px)
+			@content 
+	@else if $point == sm-down 
+		@media only screen and (max-width: 576px)   
+			@content 
+
+// =size($w:100%,$h:$w,$bdrs:$h/2)
+=size($w:100%,$h:$w)
+	width: $w
+	height: $h
+	// border-radius: $bdrs
+
+// 滿版的cover
+=pos($pos: a,$t:0,$l:0,$r:0)
+	@if $pos == a
+		position: absolute
+	@else if $pos == r
+		position: relative
+	@else if $pos == f
+		position: fixed
+	@else if $pos == s
+		position: static
+	top: $t
+	left: $l
+	right: $r
+
+// icon
+=fa($fa: \f107)
+	font: $f_awesome
+	content: $fa
+
+// need @import 'compass/css3'
+=polygon($n,$rs: -90deg)
+	$n: round($n)
+	$r: 50%
+	$ba: 360deg/$n
+	$vertices: ()
+	@for $i from 0 to $n
+		$ca: $i*$ba + $rs
+		$x: $r*(1 + cos($ca))
+		$y: $r*(1 + sin($ca))
+		$vertices: $vertices, $x $y
+	clip-path: polygon($vertices)
+
+// 預設是正三角形，如要做等腰三角形，請將type預設變數改為1 
+=triangle($align:bottom, $size: 10px, $c: $c_b_001, $type:0.8666666)
+	height: 0
+	width: 0
+	@if $align == top 
+		border-bottom: ($size*$type) solid $c
+		border-left: ($size/2) solid transparent
+		border-right: ($size/2) solid transparent
+	@else if $align == right 
+		border-left: ($size*$type) solid $c
+		border-top: ($size/2) solid transparent
+		border-bottom: ($size/2) solid transparent
+	@else if $align == bottom 
+		border-top: ($size*$type) solid $c
+		border-left: ($size/2) solid transparent
+		border-right: ($size/2) solid transparent
+	@else if $align == left 
+		border-right: ($size*$type) solid $c
+		border-top: ($size/2) solid transparent
+		border-bottom: ($size/2) solid transparent
+	@else if $align == right-top
+		border-right: $size solid $c
+		border-bottom: $size solid transparent
+	@else if $align == left-top
+		border-left: $size solid $c
+		border-bottom: $size solid transparent
+	@else if $align == right-bottom
+		border-right: $size solid $c
+		border-top: $size solid transparent
+	@else if $align == left-bottom
+		border-left: $size solid $c
+		border-top: $size solid transparent
+
+// 文字模式
+=writing($t: rl)
+	@if $t == tb
+		writing-mode: horizontal-tb
+	@else if $t == rl
+		writing-mode: vertical-rl // 文字垂直 從右到左
+	@else if $t == lr
+		writing-mode: vertical-lr // 文字垂直 從左到右
+	@else if $t == srl
+		writing-mode: sideways-rl // 文字垂直 從上到下 面朝左
+	@else if $t == slr
+		writing-mode: sideways-lr // 文字垂直 從下到上 面朝右
+
+// 進度條
+=progress-bar($w: 100%,$h: 40px, $bdw: 5px, $bdc: $c_w_001)
+	width: $w
+	height: $h
+	+c_lg3(0,$c_gr_001,$c_w_001,$c_gr_001)
+	border: $bdw solid $bdc
+	border-radius: ($h - ($bdw*2))
+	overflow: hidden
+	.progress-line
+		width: 0
+		height: 100%
+		border-radius: ($h/2)
+		background: $c_t url(../images/btn_side_bar.png) repeat-y
+		background-size: $w auto
+		transition-duration: .6s
+		position: relative
+		overflow: hidden
+		&:before
+			+ele_pseudo
+			width: calc(100% - 30px)
+			height: 24px
+			background: $c_t url(../images/btn_side_lig.png) no-repeat 0 0
+			background-size: 100% 100%
+			position: absolute
+			top: 0
+			left: 15px
+			z-index: 3
+		&:after
+			+ele_pseudo
+			width: 100%
+			height: 100%
+			+c_lg_v($c_t,$c_ye_001)
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 2
+

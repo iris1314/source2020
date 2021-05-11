@@ -1,0 +1,393 @@
+@keyframes rotate_360
+	0%
+		transform: rotate(0deg)
+
+	50%
+		transform: rotate(-180deg)
+
+	100%
+		transform: rotate(-360deg)
+
+@keyframes oclock
+	0%
+		transform: rotate(0deg)
+
+	100%
+		transform: rotate(+6deg)
+
+@keyframes move_bg
+	$i: 0
+
+	@while $i < 101
+		$i: $i + 5
+
+		#{$i}%
+			background-position: ($i * 100px) 0
+
+=imgGlitch($name, $intensity, $width, $height, $top, $left)
+	$steps: $intensity
+
+	// Ensure the @keyframes are generated at the root level
+	@at-root
+		// We need two different ones
+		@for $i from 1 through 2
+			@keyframes #{$name}-anim-#{$i}
+				@for $i from 0 through $steps
+					#{percentage($i * 1 / $steps)}
+						clip: rect(random($height) + px, $width + px, random($height) + px, 0)
+
+	> img
+		position: absolute
+		top: $top + px
+		left: $left + px
+
+	> img:nth-child(2),
+	> img:nth-child(3)
+		clip: rect(0, 0, 0, 0)
+
+	> img:nth-child(1)
+		animation: #{$name}-anim-1 7s infinite linear alternate-reverse
+
+	> img:nth-child(2)
+		left: $left + 2 + px
+		animation: #{$name}-anim-2 1s infinite linear alternate-reverse
+
+	> img:nth-child(3)
+		left: $left - 2 + px
+		animation: #{$name}-anim-3 2s infinite linear alternate-reverse
+
+/*star*/
+@keyframes move_UpDown
+	0%
+		transform: translateY(8px)
+
+	100%
+		transform: translateY(18px)
+@keyframes move_right
+	0%
+		transform: rotate(0deg) translateX(8px) rotate(0deg)
+
+	100%
+		transform: rotate(360deg) translateX(8px) rotate(-360deg)
+
+@keyframes move_left
+	0%
+		transform: rotate(0deg) translateX(8px) rotate(0deg)
+
+	100%
+		transform: rotate(-360deg) translateX(8px) rotate(360deg)
+
+@keyframes pace-spinner
+	0%
+		transform: rotate(0deg)
+
+	100%
+		transform: rotate(360deg)
+
+.slideInOutRight 
+	animation-name: slideInOutRight
+
+@keyframes slideInOutRight 
+	0% 
+		transform: translate3d(-100%, 0, 0)
+
+	50%
+		transform: translate3d(0%, 0, 0)
+
+	100% 
+		visibility: hidden
+		transform: translate3d(100%, 0, 0)
+
+@keyframes slideInL
+	0% 
+		transform: translate3d(-100%, 0, 0)
+		opacity: 0
+		filter: brightness(100%)
+	30%
+		opacity: 1
+		filter: brightness(150%)
+	80%
+		filter: brightness(300%)
+	100%
+		transform: translate3d(0%, 0, 0)
+		filter: brightness(100%)
+
+@keyframes slideInR
+	0% 
+		transform: translate3d(100%, 0, 0)
+		opacity: 0
+		filter: brightness(100%)
+	30%
+		opacity: 1
+		filter: brightness(150%)
+	80%
+		filter: brightness(300%)
+	100%
+		transform: translate3d(0%, 0, 0)
+		filter: brightness(100%)
+
+
+@keyframes shiny
+	0% 
+		filter: brightness(100%)
+	30%
+		filter: brightness(130%)
+	80%
+		filter: brightness(95%)
+	100%
+		filter: brightness(100%)
+
+@keyframes bounceInShiny
+	from,
+	20%,
+	40%,
+	60%,
+	80%,
+	to 
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+	
+
+	0% 
+		opacity: 0
+		transform: scale3d(0.3, 0.3, 0.3)
+		filter: brightness(100%)
+	
+
+	20% 
+		transform: scale3d(1.1, 1.1, 1.1)
+		filter: brightness(150%)
+	
+
+	40% 
+		transform: scale3d(0.9, 0.9, 0.9)
+		filter: brightness(300%)
+	
+
+	60% 
+		opacity: 1
+		transform: scale3d(1.03, 1.03, 1.03)
+		filter: brightness(120%)
+
+	
+
+	80% 
+		transform: scale3d(0.97, 0.97, 0.97)
+		filter: brightness(110%)
+	
+
+	to 
+		opacity: 1
+		transform: scale3d(1, 1, 1)
+		filter: brightness(100%)
+
+
+@keyframes bounceBigInShiny
+	from,
+	20%,
+	40%,
+	60%,
+	80%,
+	to 
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+	
+
+	0% 
+		opacity: 0
+		transform: scale3d(1.7, 1.7, 1.7)
+		filter: brightness(100%)
+	
+
+	20% 
+		transform: scale3d(1.1, 1.1, 1.1)
+		filter: brightness(150%)
+	
+
+	40% 
+		transform: scale3d(1.02, 1.02, 1.02)
+		filter: brightness(200%)
+	
+
+	60% 
+		opacity: 1
+		transform: scale3d(1.06, 1.06, 1.06)
+		filter: brightness(300%)
+
+	
+
+	80% 
+		transform: scale3d(1, 1, 1)
+		filter: brightness(150%)
+	
+
+	to 
+		opacity: 1
+		transform: scale3d(1.03, 1.03, 1.03)
+		filter: brightness(100%)
+	
+@keyframes lighting
+	0%
+		opacity: 1
+	50%
+		opacity: .2
+	100%
+		opacity: 1
+
+@keyframes pudding-open
+	0%
+		opacity: 0
+		transform: matrix3d(0.7, 0, 0, 0, 0, 0.7, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	2.083333%
+		transform: matrix3d(0.75266, 0, 0, 0, 0, 0.76342, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	4.166667%
+		transform: matrix3d(0.81071, 0, 0, 0, 0, 0.84545, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	6.25%
+		transform: matrix3d(0.86808, 0, 0, 0, 0, 0.9286, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	8.333333%
+		transform: matrix3d(0.92038, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	10.416667%
+		transform: matrix3d(0.96482, 0, 0, 0, 0, 1.05202, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	12.5%
+		transform: matrix3d(1, 0, 0, 0, 0, 1.08204, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	14.583333%
+		transform: matrix3d(1.02563, 0, 0, 0, 0, 1.09149, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	16.666667%
+		transform: matrix3d(1.04227, 0, 0, 0, 0, 1.08453, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	18.75%
+		transform: matrix3d(1.05102, 0, 0, 0, 0, 1.06666, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	20.833333%
+		transform: matrix3d(1.05334, 0, 0, 0, 0, 1.04355, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	22.916667%
+		transform: matrix3d(1.05078, 0, 0, 0, 0, 1.02012, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	25%
+		transform: matrix3d(1.04487, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	27.083333%
+		transform: matrix3d(1.03699, 0, 0, 0, 0, 0.98534, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	29.166667%
+		transform: matrix3d(1.02831, 0, 0, 0, 0, 0.97688, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	31.25%
+		transform: matrix3d(1.01973, 0, 0, 0, 0, 0.97422, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	33.333333%
+		transform: matrix3d(1.01191, 0, 0, 0, 0, 0.97618, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	35.416667%
+		transform: matrix3d(1.00526, 0, 0, 0, 0, 0.98122, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	37.5%
+		transform: matrix3d(1, 0, 0, 0, 0, 0.98773, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	39.583333%
+		transform: matrix3d(0.99617, 0, 0, 0, 0, 0.99433, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	41.666667%
+		transform: matrix3d(0.99368, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	43.75%
+		transform: matrix3d(0.99237, 0, 0, 0, 0, 1.00413, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	45.833333%
+		transform: matrix3d(0.99202, 0, 0, 0, 0, 1.00651, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	47.916667%
+		transform: matrix3d(0.99241, 0, 0, 0, 0, 1.00726, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	50%
+		opacity: 1
+		transform: matrix3d(0.99329, 0, 0, 0, 0, 1.00671, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	52.083333%
+		transform: matrix3d(0.99447, 0, 0, 0, 0, 1.00529, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	54.166667%
+		transform: matrix3d(0.99577, 0, 0, 0, 0, 1.00346, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	56.25%
+		transform: matrix3d(0.99705, 0, 0, 0, 0, 1.0016, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	58.333333%
+		transform: matrix3d(0.99822, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	60.416667%
+		transform: matrix3d(0.99921, 0, 0, 0, 0, 0.99884, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	62.5%
+		transform: matrix3d(1, 0, 0, 0, 0, 0.99816, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	64.583333%
+		transform: matrix3d(1.00057, 0, 0, 0, 0, 0.99795, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	66.666667%
+		transform: matrix3d(1.00095, 0, 0, 0, 0, 0.99811, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	68.75%
+		transform: matrix3d(1.00114, 0, 0, 0, 0, 0.99851, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	70.833333%
+		transform: matrix3d(1.00119, 0, 0, 0, 0, 0.99903, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	72.916667%
+		transform: matrix3d(1.00114, 0, 0, 0, 0, 0.99955, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	75%
+		transform: matrix3d(1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	77.083333%
+		transform: matrix3d(1.00083, 0, 0, 0, 0, 1.00033, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	79.166667%
+		transform: matrix3d(1.00063, 0, 0, 0, 0, 1.00052, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	81.25%
+		transform: matrix3d(1.00044, 0, 0, 0, 0, 1.00058, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	83.333333%
+		transform: matrix3d(1.00027, 0, 0, 0, 0, 1.00053, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	85.416667%
+		transform: matrix3d(1.00012, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	87.5%
+		transform: matrix3d(1, 0, 0, 0, 0, 1.00027, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	89.583333%
+		transform: matrix3d(0.99991, 0, 0, 0, 0, 1.00013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	91.666667%
+		transform: matrix3d(0.99986, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	93.75%
+		transform: matrix3d(0.99983, 0, 0, 0, 0, 0.99991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	95.833333%
+		transform: matrix3d(0.99982, 0, 0, 0, 0, 0.99985, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	97.916667%
+		transform: matrix3d(0.99983, 0, 0, 0, 0, 0.99984, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+	100%
+		opacity: 1
+		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+@keyframes pudding-close
+	0%
+		opacity: 1
+
+	100%
+		opacity: 0
+		transform: scale3d(0.8, 0.8, 1)
+

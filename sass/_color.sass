@@ -1,0 +1,50 @@
+$c_b_001: #000
+
+$c_w_001: #fff
+
+$c_g_001: #909090
+
+$c_g_002: #404040
+
+$c_ye_001: #fabf13
+
+$c_ye_002: #efc145
+
+$c_re_001: #a70719
+
+$c_gr_001: #0c5b47
+
+$c_gr_002: #2b5a48
+
+
+$c_t: transparent
+
+=c_lg($deg:0deg,$c1:$c_b_001,$c2:$c_w_001)
+	background-image: linear-gradient($deg, $c1 0%, $c2 100%)
+
+=c_lg_cir($c1:$c_b_001,$c2:$c_w_001)
+	background: radial-gradient($c1, $c2)
+
+=bg_b_t($op:0)
+	background-color: rgba(0, 0, 0, $op)
+
+=bg_w_t($op:0)
+	background-color: rgba(255, 255, 255, $op)
+
+=sha($v1:0px,$v2:0px,$v3:10px,$c:$c_b_001)
+	box-shadow: $v1 $v2 $v3 $c
+
+=sha_in($v4:0px,$v5:0px,$v6:10px,$c2:$c_b_001)
+	box-shadow: inset $v4 $v5 $v6 $c2
+
+=sha_out_in($v1:0px,$v2:0px,$v3:10px,$c:$c_b_001,$v4:0px,$v5:0px,$v6:10px,$c2:$c_b_001)
+	box-shadow: $v1 $v2 $v3 $c, inset $v4 $v5 $v6 $c2
+
+=img_sha($v1:0px,$v2:0px,$v3:10px,$c:$c_w_001)
+	filter: drop-shadow($v1 $v2 $v3 $c)
+
+// 函式，顏色變深
+// darken(#clr,$)
+// 
+// 函式，顏色變淺
+// lighten(#clr,$)

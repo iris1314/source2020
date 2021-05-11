@@ -1,0 +1,285 @@
+
+/*DESKTOP
+ ====================== */
+
+// @media screen and (min-width: 575px)
+
+// @media screen and (min-width: 768px)
+
+// @media screen and (min-width: 992px)
+
+// @media screen and (min-width: 992px) and (max-width: 1599px)
+
+// @media screen and (min-width: 992px) and (max-width: 1440px)
+
+// @media screen and (min-width: 992px) and (max-width: 1400px) and (max-height: 656px)
+
+// @media screen and (min-width: 992px) and (max-width: 1200px)
+
+// @media screen and (min-width: 1200px)
+
+
+
+/**/
+	
+/* IE10+ CSS styles go here 
+ ====================== */
+// @media all and (-ms-high-contrast: none)
+// IE11
+// @media screen and(-ms-high-contrast:active),(-ms-high-contrast:none)
+
+/* NOTEBOOK
+ ====================== */
+// @media not all, (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 992px), (min-resolution: 120dpi) and (min-width: 992px) 
+// @media not all, (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 992px), (min-resolution: 144dpi) and (min-width: 992px)
+/**/
+
+/*TABLET
+ ====================== */
+
+@media screen and (max-width: 1199px)
+	.wrap
+		.sec
+			.container
+				.fruit
+					display: none
+				
+	// 全樣式去掉滑動
+	// *  
+	// 	touch-action: pan-y
+	// .wow
+	// 	animation-delay: 0s !important
+
+// @media screen and (max-width: 1199px) and (min-width: 992px)	
+
+// @media screen and (max-width: 1199px) and (orientation: portrait)
+
+@media screen and (max-width: 1500px)
+	.wrap
+		.sec
+			&#recruit
+				padding-bottom: 200px
+				&::after
+					content: ""
+					position: absolute
+					bottom: 0
+					width: 100%
+					height: 13vw
+					background-image: url(../images/cover_recruit.png)
+					background-repeat: no-repeat
+					background-position: 50% 101%
+					background-size: 100%
+					pointer-events: none
+				.person_m,.person_fm
+					position: absolute
+					bottom: -200px
+					img
+						width: 100%
+				.person_m
+					width: 16%
+					right: 16%
+				.person_fm
+					width: 14.75%
+					left: 16%
+					
+
+@media screen and (max-width: 991px)
+	.wrap
+		.sec
+			padding-top: 45px
+			padding-bottom: 45px
+			.container
+				max-width: 100%
+				padding-left: 60px
+				padding-right: 60px
+			h2
+				font-size: 26px
+				span
+					&::before,&::after
+						transform: scale(0.8) rotate(45deg)
+						top: 7px
+			&.banner
+				padding-top: 60px
+			&#about
+				width: 100%
+				background: url(../images/bg_about_s.jpg) no-repeat center top
+			&#service
+				.customer_item
+					[class*=col-]
+						padding-left: 0
+						padding-right: 0
+			&#recruit
+				background: url(../images/bg_recruit_s.jpg) no-repeat center top
+				background-size: cover
+			
+				.recruitInfo 
+					.item
+						width: 100%
+						margin-bottom: 15px
+				&::after
+					content: ""
+					position: absolute
+					bottom: 0
+					width: 100%
+					height: 13vw
+					background-image: url(../images/cover_recruit.png)
+					background-repeat: no-repeat
+					background-position: 50% 101%
+					background-size: 100%
+					pointer-events: none
+				.person_m,.person_fm
+					position: absolute
+					img
+						width: 100%
+				.person_m
+					width: 22.5%
+					right: 16%
+				.person_fm
+					width: 19.75%
+					left: 16%
+				// .person_m
+				// 	width: 27.5%
+				// 	right: 16%
+				// .person_fm
+				// 	width: 25.75%
+				// 	left: 16%
+					
+				
+		
+      
+	#popNews
+		.pop_win
+			.popWrap 
+				width: 90%
+				
+@media screen and (max-width: 767px)
+	.wrap .sec#recruit .btn_wrap
+	.wrap
+		.sec
+			&#news,&#store
+				background: url(../images/bg_news.jpg) repeat 
+				.news-swiper,.store-swiper
+					padding-left: 0
+					padding-right: 0
+			&#store
+				.swiper-button-next, .swiper-button-prev
+					top: 40%
+			.container
+				.btn-group
+					.btn-store-choose
+						margin: 0 15px
+			&#recruit
+				.btn_wrap
+					flex-direction: column
+					.btn_recruit
+						margin: 0 0 15px
+		.side_wrap
+			position: fixed
+			top: auto
+			right: 0
+			bottom: 0
+			z-index: 31
+			display: flex
+			flex-direction: row-reverse
+			width: 100%
+
+			.sideBtn
+				background: $c_gr_001
+				padding: 10px 15px
+				border-radius: 0
+				border: 1px solid $c_ye_001
+				border-bottom: none
+				text-align: center
+				color: $c_w_001
+				font-size: 18px
+				font-weight: 600
+				writing-mode: horizontal-tb
+				cursor: pointer
+				transition: all 0.3s
+				width: 50%
+				height: 50px
+				margin-bottom: 0
+				span
+					letter-spacing: 1px
+					position: relative
+					display: inline-block
+					padding: 0 25px
+					&::before,&::after
+						top: 6px					
+					&::before
+						left: 0
+					&::after
+						left: auto
+						right: 0
+				
+				&+.sideBtn
+					margin-top: 0
+				&:hover
+					color: $c_ye_001 
+		.sec#service
+			.contactArea
+				.customer_item
+					.form-group
+						padding-left: 0
+						padding-right: 0
+						flex-direction: column
+						.input_info
+							width: 100%
+				.btn_sent
+					width: auto
+					margin: 15px 0
+					button
+						width: 100%
+		footer
+			padding-bottom: 50px
+
+@media screen and (max-width: 575px)
+	.wrap
+		.sec
+			&#recruit
+				.person_m
+					width: 27.5%
+					right: 16%
+				.person_fm
+					width: 25.75%
+					left: 16%
+
+	
+// @media screen and (min-width: 768px) and (max-width: 991px)
+
+// @media screen and (min-width: 768px)
+
+/**/
+
+/*ORIENTATION:LANDSCAPE
+ ====================== */
+
+// @media screen and (min-device-width: 992px) and (max-device-width: 1366px) and (orientation: landscape)
+
+/**/
+
+/* MOBILE
+ ====================== */
+
+// @media screen and (max-width: 767px)
+
+// @media screen and (min-width: 576px) and (max-width: 767px)
+
+// @media screen and (max-width: 575px)
+
+// @media screen and (max-width: 321px)
+/**/
+
+/* ONLY
+ ====================== */
+
+// @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 1024px)
+// 	body.overflow
+// 		overflow: visible
+// @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 991px)
+
+// @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 767px)
+
+/* HEIGHT
+ ====================== */
+// @media screen and (min-width: 1200px) and (max-height: 680px)
