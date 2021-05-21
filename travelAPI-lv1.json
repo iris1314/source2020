@@ -1,0 +1,72 @@
+[{
+        "id": 0,
+        "name": "肥宅心碎賞櫻3日",
+        "imgUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80",
+        "area": "高雄",
+        "description": "賞櫻花最佳去處。肥宅不得不去的超讚景點！",
+        "group": 87,
+        "price": 1400,
+        "rate": 10
+    },
+    {
+        "id": 1,
+        "name": "貓空纜車雙程票",
+        "imgUrl": "https://images.unsplash.com/photo-1501393152198-34b240415948?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+        "area": "台北",
+        "description": "乘坐以透明強化玻璃為地板的「貓纜之眼」水晶車廂，享受騰雲駕霧遨遊天際之感",
+        "group": 99,
+        "price": 240,
+        "rate": 2
+    },
+    {
+        "id": 2,
+        "name": "台中谷關溫泉會1日",
+        "imgUrl": "https://images.unsplash.com/photo-1535530992830-e25d07cfa780?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+        "area": "台中",
+        "description": "全館客房均提供谷關無色無味之優質碳酸原湯，並取用八仙山之山冷泉供蒞臨貴賓沐浴及飲水使用。",
+        "group": 20,
+        "price": 1765,
+        "rate": 7
+    },
+
+    {
+        "id": 3,
+        "name": "寧夏夜市",
+        "imgUrl": "http://blog.xuite.net/maomi/Food01/71402109/cover600.jpg",
+        "area": "台北",
+        "description": "全被稱為「台北人的胃」，雖然不是一出捷運就到得了，但怎麼樣都無法阻止所有吃貨的心。而寧夏的攤販有一半都已經是老字號了，想試下台灣道地傳統小吃，這裡絕對適合你！",
+        "group": 20,
+        "price": 1765,
+        "rate": 7
+    },
+    {
+        "id": 4,
+        "name": "瑞豐夜市",
+        "imgUrl": "https://cdn2.ettoday.net/images/3866/d3866789.jpg",
+        "area": "高雄",
+        "description": "位於左營裕誠路、南屏路段，已有20多年的歷史，很受高雄在地人的喜愛，擁有千坪占地、上千個攤位，其中美食真的很多，想要全部收集完畢可能要來很多次，高人氣的小吃有石記臭豆腐、脆皮豬腳、鯛魚燒冰淇淋、榮刈刈包等。瑞豐夜市曾在媒體評鑑為全高雄最具吸引力的觀光夜市。",
+        "group": 20,
+        "price": 1765,
+        "rate": 7
+    },
+    {
+        "id": 5,
+        "name": "逢甲夜市",
+        "imgUrl": "https://www.oeoeo.com.tw/files/00163/11873913735c614042f0f81.jpg",
+        "area": "台中",
+        "description": "臺中著名商圈之一，位於逢甲大學方圓1公里之內，包括文華路、逢甲路、福星路。商圈內的小吃讓你讚不絕口，服飾獨具個性、物美價廉，也是臺中最便宜的幾個據點之一。",
+        "group": 20,
+        "price": 1765,
+        "rate": 7
+    },
+    {
+        "id": 5,
+        "name": "一中街夜市",
+        "imgUrl": "https://travel.taichung.gov.tw/Utility/DisplayImage?id=31557",
+        "area": "台中",
+        "description": "台中一中街夜市也就是大家所謂的一中商圈（一中街、一中街商圈、台中一中商圈），位於台中車站約8分鐘路程距離，交通蠻方便的，離台中市區主要的景點(國立自然科學博物館、綠光計畫范特喜文創聚落、臺中公園…等)也都很近，附近也有不少飯店住宿選擇，一中商圈附近很多餐廳、小吃、服飾店，生活機能極佳，如果愛逛街的朋友，可以考慮規劃一個下午在這邊，或者晚上空下來直接到一中街夜市逛街與吃美食",
+        "group": 20,
+        "price": 1765,
+        "rate": 7
+    }
+]
