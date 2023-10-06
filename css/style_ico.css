@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'iris';
+  src:  url('fonts/iris.eot?nu44ae');
+  src:  url('fonts/iris.eot?nu44ae#iefix') format('embedded-opentype'),
+    url('fonts/iris.ttf?nu44ae') format('truetype'),
+    url('fonts/iris.woff?nu44ae') format('woff'),
+    url('fonts/iris.svg?nu44ae#iris') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*="icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iris' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shield:before {
+  content: "\e900";
+}
+.icon-star:before {
+  content: "\e901";
+}
+.icon-home:before {
+  content: "\e902";
+}
+.icon-spinner6:before {
+  content: "\e97f";
+}
+
+.wrap-icon{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+[class*="icon-"]{
+  margin: 0 15px;
+  color:cornflowerblue;
+  font-size: 16px;
+}
+[class*="icon-"]:before{
+  font-size: 28px;
+  margin-right: 10px;
+  font-weight: 600;
+}
